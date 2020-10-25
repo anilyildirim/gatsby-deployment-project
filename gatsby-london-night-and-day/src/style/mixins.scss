@@ -1,0 +1,5 @@
+@mixin light-mode {
+  @media (prefers-color-scheme: light) {
+    @content;
+  }
+}
