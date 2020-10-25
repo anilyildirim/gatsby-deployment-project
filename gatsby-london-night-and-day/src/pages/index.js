@@ -88,7 +88,7 @@ export default props => (
   />
 );
 
-const animationText = document.querySelector("header .page-head-title");
+/* const animationText = document.querySelector("header .page-head-title");
 if (animationText) {
   const textLetters = animationText.textContent.split("");
   animationText.textContent = "";
@@ -121,4 +121,4 @@ if (animationText) {
   function complete() {
     clearInterval(timer);
   }
-}
+} */
