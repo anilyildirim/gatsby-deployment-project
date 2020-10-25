@@ -87,3 +87,38 @@ export default props => (
     )}
   />
 );
+
+const animationText = document.querySelector("header .page-head-title");
+if (animationText) {
+  const textLetters = animationText.textContent.split("");
+  animationText.textContent = "";
+
+  for (let i = 0; i < textLetters.length; i++) {
+    let newSpan = document.createElement("SPAN");
+    let newSpanText = document.createTextNode(textLetters[i]);
+    newSpan.appendChild(newSpanText);
+    animationText.appendChild(newSpan);
+
+    if (textLetters[i] === " ") {
+      newSpan.style.width = "10px";
+    }
+  }
+
+  let char = 0;
+  let timer = setInterval(onTick, 50);
+
+  function onTick() {
+    let target = animationText.querySelectorAll("span")[char];
+    target.classList.add("fade");
+    char++;
+
+    if (char === textLetters.length) {
+      complete();
+      return;
+    }
+  }
+
+  function complete() {
+    clearInterval(timer);
+  }
+}
